@@ -14,8 +14,10 @@ provider "azurerm" {
 
 module "common_resources" {
   source = "./modules/common_resources"
+
 }
 module "frontend" {
   source = "./modules/frontend"
   rg_name = "${module.common_resources.name_of_rg}"
+  service_plan_yield_id = "${module.common_resources.yield_service_plan_name}"
 }

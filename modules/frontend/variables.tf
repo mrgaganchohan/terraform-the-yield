@@ -5,3 +5,6 @@ variable "location" {
 variable "rg_name" {
   type = string
 }
+variable "service_plan_yield_id" {
+  type = string
+}
