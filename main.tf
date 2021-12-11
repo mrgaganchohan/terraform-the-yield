@@ -12,8 +12,10 @@ provider "azurerm" {
   features {}
 }
 
-# Create a resource group
-resource "azurerm_resource_group" "rg-yield-dev" {
-  name     = "rg-yield-dev"
-  location = "Australia Southeast"
+module "common_resources" {
+  source = "./modules/common_resources"
+}
+module "frontend" {
+  source = "./modules/frontend"
+  rg_name = "${module.common_resources.name_of_rg}"
 }
