@@ -13,6 +13,6 @@ resource "azurerm_app_service_plan" "plan-yield-app" {
 
   sku {
     tier = "Standard"
-    size = "S1"
+    size = "S3"
   }
 }

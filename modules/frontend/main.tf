@@ -6,6 +6,7 @@ resource "azurerm_app_service" "app-service-yield-frontend" {
 
   site_config {
     linux_fx_version = "node|14-lts"
+    app_command_line = "npm run start"
   }
 }
 
