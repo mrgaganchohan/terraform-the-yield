@@ -10,7 +10,7 @@ https://app-service-yield-frontend.azurewebsites.net/
 Yield App is a very basic app which has a frontend which sends and consumes the Azure Service bus queue messages. 
 All App services has CI/CD done, and is part of their respective codebase (links at the bottom of this document)
 * Website can be accessed at https://app-service-yield-frontend.azurewebsites.net/ . Screenshot of the frontend can be found in source code under 'Infra Architecture' named as 'Screenshot.png'
-* Diagram of infrastructure: Diagram of infra can be found under folder 'Infra Architecture'. It can also be found at this link: https://excalidraw.com/#json=mtLrAf1XSlx-kljx6WQYB,ZpGdbI_OazjVlBg2yTih6w
+* Diagram of infrastructure: Diagram of infra can be found under folder 'Infra Architecture'. It can also be found at this link: https://excalidraw.com/#json=pfpjBA5lJM1MLlT7UecNp,mAdqur8Ba-9FNW6xsakweg
 
 ## Infrastructure of the app:
 Infrastructure has been structured for a microservice architecture. Following Resources were created in Azure using terraform:
@@ -63,4 +63,6 @@ Codebase for different apps used which are deployed on three different app servi
 
 ## CI/CD pipelines:
 All the code for above mentioned code has been deployed through Azure pipelines, and **'azure-pipelines.yml'** can be found in the master branch of all the above mentioned codebases.
-Because of the time constraint, It has hard coded values of subscriptionID and app-Service name in the commits, but ideally it would have not been included in the source code. But nothing can be deployed to them by a third party in my azure portal, as Azure Pipelines will ask for credentials.
+Because of the time constraint, It has hard coded values of subscriptionID and app-Service name in the commits, but ideally it would have not been included in the source code. But nothing can be deployed to them by a third party in my azure portal, as Azure Pipelines will ask for credentials. 
+
+In CI/CD if you use azure-files, you might have to update your suscription id in azure-pipelines.yml, and in nodejs apps replace service bus launch URL
